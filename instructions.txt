@@ -1,0 +1,10 @@
+Building
+To build the project use following command:
+.................................................
+mvn clean package
+
+Running
+After building the application run following command to start it:
+.................................................
+mvn spring-boot:run
+// port: 8080
