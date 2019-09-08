@@ -8,6 +8,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -42,7 +43,7 @@ public class BookControllerTest {
     
     @Test
     public void getBookTest() throws Exception {
-    	when(service.getBookByIsbn("0123456789123")).thenReturn(bookTest1);
+    	when(service.getBookByIsbn("0123456789123")).thenReturn(Optional.of(bookTest1));
     	
     	this.mvc.perform(get("/api/book/0123456789123"))
     		.andDo(print())

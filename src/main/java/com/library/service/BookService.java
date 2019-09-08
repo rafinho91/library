@@ -27,10 +27,10 @@ public class BookService {
 	private BookSearch bookSearch;
 	
 	
-	public BookDTO getBookByIsbn(String isbn) {
-		return Optional.ofNullable(bookRepository.findByIsbn(isbn))
-					.map(BookDTO::new)
-					.orElse(null);
+	public Optional<BookDTO> getBookByIsbn(String isbn) {
+		return Optional
+					.ofNullable(bookRepository.findByIsbn(isbn))
+					.map(BookDTO::new);
 	}
 
 	public List<BookDTO> getBooksByCategory(String category) {

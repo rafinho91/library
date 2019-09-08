@@ -62,7 +62,7 @@ public class BookServiceTest {
 	@Test
 	public void getBookByIsbnTest() {
 		BookDTO expected = new BookDTO(book);
-		BookDTO result = bookService.getBookByIsbn(isbn);
+		BookDTO result = bookService.getBookByIsbn(isbn).get();
 		
 		assertThat(result.getTitle()).isEqualTo(expected.getTitle());
 	}

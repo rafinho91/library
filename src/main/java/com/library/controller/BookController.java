@@ -29,7 +29,7 @@ public class BookController {
 	
 	@GetMapping("/book/{isbn}")
 	public ResponseEntity<?> getBook(@PathVariable("isbn") String isbn) {
-		Optional<BookDTO> bookDto = Optional.ofNullable(bookService.getBookByIsbn(isbn));
+		Optional<BookDTO> bookDto = (bookService.getBookByIsbn(isbn));
 		if (bookDto.isPresent()) {
 			return new ResponseEntity<BookDTO>(bookDto.get(), HttpStatus.OK);
 		}
